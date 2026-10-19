@@ -18,6 +18,8 @@ jobs:
           f=$(find . -maxdepth 3 -name settings.gradle.kts | head -1)
           if [ -n "$f" ] && [ "$f" != "./settings.gradle.kts" ]; then cp -r "$(dirname "$f")"/. . ; fi
           ls -la
+
+      - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           distribution: temurin
