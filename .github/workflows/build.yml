@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name:      - name: Unpack project zip if uploaded as a zip
+      - name: Unpack project zip if uploaded as a zip
         run: |
           for z in *.zip; do [ -f "$z" ] && unzip -oq "$z"; done || true
           f=$(find . -maxdepth 3 -name settings.gradle.kts | head -1)
